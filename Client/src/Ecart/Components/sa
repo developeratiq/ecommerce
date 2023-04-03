@@ -1,0 +1,16 @@
+<p>
+           
+    <span className="quantity">2</span>
+    <span className="price">{data.price}</span></p>
+   
+      {
+        lists&&lists.map((data)=>(
+          <>
+          
+          </>
+        ))
+      }
+     
+      <hr />
+      <p>Total <span className="price" style={{color: 'black'}}><b>$30</b></span></p>
+    </div>

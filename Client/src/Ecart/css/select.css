@@ -1,0 +1,28 @@
+.select-container {
+    position: relative;
+  }
+  
+  .select {
+    appearance: none;
+    padding: 10px 30px 10px 15px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #333;
+    font-size: 16px;
+    width: 300px;
+    cursor: pointer;
+  }
+  
+  .select:focus {
+    outline: none;
+  }
+  
+  .select-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #333;
+  }
+  

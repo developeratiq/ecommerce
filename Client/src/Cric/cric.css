@@ -1,0 +1,45 @@
+.maindiv{
+    display: flex;
+    flex-wrap: wrap;
+     border: 2px solid red;
+     padding-left: 5%;     
+    
+}
+.main_heading{
+    color: blueviolet;
+    margin-left: 5%;
+}
+.statusButton{
+    width: 15%;
+     margin-left: 80%;
+     margin-top: 2%;
+     border-radius: 5px;
+     background-color: peru;
+     color: aliceblue;
+     font-weight: bolder;
+}
+.live{
+    width: 15%;
+     margin-left: 80%;
+     margin-top: 2%;
+     border-radius: 5px;
+     background-color: rgb(80, 199, 151);
+     color: aliceblue;
+     font-weight: bolder;
+}
+.complete{
+    color: aquamarine;
+}
+
+
+@media  screen and (max-width:480px) {
+     .statusButton{
+        width: 120px;
+        margin-left: 50%;
+     }
+     .live{
+        width: 120px;
+        margin-left: 50%;
+     }
+    
+}

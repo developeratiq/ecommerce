@@ -1,0 +1,124 @@
+{
+    "apikey": "b68e7d18-f12a-4556-a40b-a1e5c380960e",
+  "data": [
+    {
+      "id": "2d448290-d882-4e67-9a4a-f62dfea9a51a",
+      "name": "Western Australia vs New South Wales, Final",
+      "status": "Western Australia won by 18 runs",
+      "matchType": "odi",
+      "venue": "Junction Oval, Melbourne",
+      "date": "2022-03-10",
+      "dateTimeGMT": "2022-03-10T23:30:00",
+      "teams": [
+        "Western Australia",
+        "New South Wales"
+      ],
+      "score": [
+        {
+          "r": 207,
+          "w": 10,
+          "o": 46.3,
+          "inning": "Western Australia Inning 1"
+        },
+        {
+          "r": 225,
+          "w": 9,
+          "o": 50,
+          "inning": "New South Wales Inning 1"
+        }
+      ],
+      "series_id": "ff5aa3f3-7164-4766-be90-3b64783257a0",
+      "fantasyEnabled": false
+    },
+    {
+        "id": "2d0e2d2d-4283-4a32-979a-4245c04a2c22",
+        "name": "Rwanda vs Kenya, 11th Match",
+        "matchType": "t20",
+        "status": "Kenya won by 9 wkts",
+        "venue": "Gahanga International Cricket Stadium, Kigali City",
+        "date": "2022-11-20",
+        "dateTimeGMT": "2022-11-20T11:45:00",
+        "teams": [
+          "Rwanda",
+          "Kenya"
+        ],
+        "teamInfo": [
+          {
+            "name": "Kenya",
+            "shortname": "KEN",
+            "img": "https://g.cricapi.com/img/teams/620-637877088284816006.webp"
+          },
+          {
+            "name": "Rwanda",
+            "shortname": "RWN",
+            "img": "https://g.cricapi.com/img/teams/646-637873697602208351.webp"
+          }
+        ],
+        "score": [
+          {
+            "r": 87,
+            "w": 9,
+            "o": 20,
+            "inning": "Rwanda Inning 1"
+          },
+          {
+            "r": 90,
+            "w": 1,
+            "o": 10.4,
+            "inning": "Kenya Inning 1"
+          }
+        ],
+        "series_id": "979dc520-3341-4013-93b6-c8585fa2dffe",
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
+        "hasSquad": true,
+        "matchStarted": true,
+        "matchEnded": true
+      },
+      {
+        "id": "ce83753e-0ef3-4d0b-9937-02337e217d5d",
+        "name": "Namibia vs United States, 2nd Match",
+        "matchType": "odi",
+        "status": "United States won by 71 runs",
+        "venue": "Wanderers Cricket Ground, Windhoek",
+        "date": "2022-11-20",
+        "dateTimeGMT": "2022-11-20T07:30:00",
+        "teams": [
+          "Namibia",
+          "United States"
+        ],
+        "teamInfo": [
+          {
+            "name": "Namibia",
+            "shortname": "NAM",
+            "img": "https://g.cricapi.com/img/teams/53-637877082656229722.webp"
+          },
+          {
+            "name": "United States",
+            "shortname": "USA",
+            "img": "https://g.cricapi.com/img/teams/93-637877085206398451.webp"
+          }
+        ],
+        "score": [
+          {
+            "r": 244,
+            "w": 8,
+            "o": 50,
+            "inning": "United States Inning 1"
+          },
+          {
+            "r": 173,
+            "w": 10,
+            "o": 43.4,
+            "inning": "Namibia Inning 1"
+          }
+        ],
+        "series_id": "638e7c98-fe04-4c84-946e-699f0abdc00c",
+        "fantasyEnabled": true,
+        "bbbEnabled": true,
+        "hasSquad": true,
+        "matchStarted": true,
+        "matchEnded": true
+      }
+  ]
+}

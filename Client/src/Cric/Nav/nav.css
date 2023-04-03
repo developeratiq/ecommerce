@@ -1,0 +1,68 @@
+.navbar-expand-lg{
+    width: 99vw;
+}
+
+.navbar-brand{
+    color: white;
+}
+.nav-link{
+    color: wheat;
+}
+.active{
+    color: red;
+}
+.collapse{
+    flex: 3;
+}
+.active{
+    color: rgb(225, 233, 225);
+    font-size: larger;
+    font-weight: bolder;
+     
+}
+.nav{
+    margin-left: 5%;
+}
+
+.home{
+    color: red;
+}
+   .flex2{
+    display: flex;
+    margin-left: 20px;
+  
+   }
+   .flex21{
+    padding-left: 18px;
+   }
+
+
+   .nav{
+    text-decoration: none;
+
+   }
+
+
+
+ .nav-item{
+    font-size: 10px;
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+ }
+  .nav-item a{
+    font-size: 10px;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 40px;
+  }
+  .nav-item{
+
+  }
+
+
+@media screen and (max-width:440) {
+   .nav-link{
+    font-size:5px;
+   }
+}
