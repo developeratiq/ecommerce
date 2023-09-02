@@ -10,6 +10,7 @@ function Images({ img ,loading }) {
     }
     },[])
 
+    // console.log(mainImage)
     return (
         <>
         
@@ -18,7 +19,7 @@ function Images({ img ,loading }) {
                         {
                             loading ? <h1>loading</h1> : (
                                 <>
-                                <div className="container">
+                                <div className="cont1">
                             <div className='image-container'>
                                 <div className="Images">
 
@@ -30,7 +31,7 @@ function Images({ img ,loading }) {
                                                     <img
                                                         src={image.url} alt="" 
                                                         
-                                                        onClick={() => setMainImage(image)} 
+                                                        onClick={() => setMainImage(image.url)} 
                                                         />
 
 

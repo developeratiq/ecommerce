@@ -27,7 +27,7 @@ function SignUp() {
     const handleSubmit =  async (e) => {
         e.preventDefault();
         
-    let result =  await fetch('http://localhost:5000/signup',{
+    let result =  await fetch('http://localhost:7000/signup',{
         method: "POST",
         body: JSON.stringify({
            name,email,phone,password

@@ -22,7 +22,7 @@ function Login() {
 
     const handleSubmit =  async (e)=>{
         e.preventDefault();
-        let result = await fetch('http://localhost:5000/login',{
+        let result = await fetch('http://localhost:7000/login',{
         method: "POST",
         body: JSON.stringify({
            email,password

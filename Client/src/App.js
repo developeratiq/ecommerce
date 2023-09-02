@@ -21,10 +21,11 @@ function App() {
   return (
     <>
     <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
     <StyledComp/>
+   
     <Routes>
-    <Route path='/' element={<Home></Home>}></Route>
+    <Route index path='/' element={<Home></Home>}></Route>
     <Route path='/products' element={<Products></Products>}></Route>
     <Route path='/products/:productId' element={<SIngleProduct></SIngleProduct>}></Route>
       

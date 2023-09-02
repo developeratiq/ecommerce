@@ -10,6 +10,7 @@ import {Link}from 'react-router-dom'
 import { toast } from 'react-toastify';
 import Search from './Search';
 import SelectInput from './SelectInput';
+import FormatPrice from './FormatPrice';
 
 function Products() {
   const user = localStorage.getItem('name')
@@ -42,7 +43,7 @@ function Products() {
     },[select])
 
     useEffect(() => {
-      localStorage.setItem('name','md atiq')
+      // localStorage.setItem('name','md atiq')
      
       fetchProducts();
      
@@ -64,6 +65,7 @@ function Products() {
      <SelectInput setSelect={setSelect}/>
 
     </div>
+    <hr />
      <div className="cards">
      
 
@@ -80,7 +82,7 @@ function Products() {
               <div className="card_footer">
               <h4>{items.name}</h4>
               {/* <p>desc</p> */}
-              <p>{items.price}</p>
+              <p><FormatPrice price={items.price}/></p>
               {/* <button className='btn btn-primary' onClick={()=>addToCart(items)}> Add to <AiOutlineShoppingCart/></button> */}
 
               </div>

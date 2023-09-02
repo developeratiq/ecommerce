@@ -115,14 +115,15 @@ function Desc({desc,items}) {
             const newitems = items
 
          setCartData([...cartData,newitems]);
-
+         toast.success('Added to Cart')
+        //  navigate('/cart')
             
           }
         }
       
   return (
     <>
-    <div className="container">
+    <div className="desc">
     <div className='desc-style'>
 
 
@@ -178,7 +179,7 @@ function Desc({desc,items}) {
          value = {pin}
          onChange={(e)=>setPinCode(e.target.value)}
         />
-        <button   className='btn btn-info m-3 col-sm-5'  type="submit" >Check Pincode </button>
+        <button   className='btn btn-info m-3 col-sm-5 pincode-btn'  type="submit" >Check Pincode </button>
         {deliverable===true &&(<p style={{color:"green"}}>deliverable</p>)}
          {nonDeliverable===true &&(<p style={{color:"red"}}>Out of deivery Range</p>)}
       </form>
@@ -192,7 +193,7 @@ function Desc({desc,items}) {
        
                    <button
                     
-                   className='btn btn-success ' type='button' onClick={addtocart}>🛒Add to Cart</button>
+                   className='button' type='button' onClick={addtocart}>🛒Add to Cart</button>
     
       </div>
 

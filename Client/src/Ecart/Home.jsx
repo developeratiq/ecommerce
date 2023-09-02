@@ -1,6 +1,8 @@
 import React from 'react'
 import {  AiOutlineDoubleRight} from "react-icons/ai";
 import {useNavigate} from 'react-router-dom'
+import Avatar from 'react-avatar';
+
 
 function Home() {
     const navigate  =useNavigate()
@@ -13,6 +15,7 @@ function Home() {
             <img src={url} alt="loading" />
         </div>
         <div className="content">
+        
             <h1>Upgrade your Life</h1>
             <h3>with beautiful Journey</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 

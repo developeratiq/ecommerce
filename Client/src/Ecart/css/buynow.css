@@ -102,4 +102,7 @@
     .col-25 {
       margin-bottom: 20px;
     }
+   .btn{
+    width: 100%;
+   }
   }

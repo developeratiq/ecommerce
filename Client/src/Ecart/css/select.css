@@ -25,4 +25,29 @@
     transform: translateY(-50%);
     color: #333;
   }
-  
+  input{
+    appearance: none;
+    padding: 10px 30px 10px 15px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background: transparent;
+  }
+  @media (max-width:450px) {
+
+ 
+    .select {
+      font-size: 70%;
+      word-wrap: normal;
+      width: 30vw;
+      padding-left: 0.5rem;
+     
+    }
+    input{
+      background: transparent;
+      border-radius: 20px;
+      padding: 0px 3px 3px 15px;
+      height: 34px;
+    }
+    
+    
+  }

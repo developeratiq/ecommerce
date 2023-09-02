@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 import {remove} from '../Redux/ProductSlice'
 import {useDispatch}from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Loader from './Loader'
+import FormatPrice from './FormatPrice'
 
 const readData = ()=>{
     const cartData = localStorage.getItem('cart')
@@ -51,12 +53,11 @@ function AddToCart() {
 
 
             {
-                !data ? (<>loading...</>) : (
+                !data ? (<Loader/>) : (
                     <>
-                        <div className="container">
+                        <div className="cart">
                             
-                            <div c
-                            lassName="cartItems">
+                            <div className="cartItems">
                                 {
                                     items && items.map((data) => (<>
                                         <div className="allcards">
@@ -66,25 +67,29 @@ function AddToCart() {
                                                 
                                                 <div className="name">
                                                 <h1>{data.name}</h1>
-                                                <h4>{data.price}$</h4>
+                                                <h4><FormatPrice price={data.price}/></h4>
                                                 </div>  
 
                                             </div>
                                             <div className="desc">
                                                 <p>{data.description}</p>
-                                                <button style={{margin:"1rem"}} className='btn btn-success' 
+
+                                                {/* <button className='button'> buy Now</button> */}
+                                            <button  className='button' style={{backgroundColor:"#59E153 ", border:"none",boxShadow:"1px 5px 5px 1px #C0EA9A"}}
                                                 onClick={()=>navigate('/buynow')}
                                                 >BuyNow</button>
-                                                 <button className='btn btn-danger'
+                                                 <button className='button ' 
                                                   onClick={()=>handleRemove(data.id)}
                                                  >Remove</button> 
                                             </div>
                                         </div>
+                                        <hr />
 
 
                                     </>))
                                 }
                             </div>
+                            <hr />
                         </div>
 
                     </>

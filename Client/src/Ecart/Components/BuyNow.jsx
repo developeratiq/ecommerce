@@ -7,6 +7,7 @@ import { FaCcMastercard } from 'react-icons/fa';
 import Quantity from './Quantity';
 import { useForm } from "react-hook-form";
 import axios from 'axios'
+import FormatPrice from './FormatPrice';
 
 const readData = () => {
   let data = localStorage.getItem('cart')
@@ -28,17 +29,24 @@ function BuyNow() {
 
 
 
+  const username =localStorage.getItem('name')
+  console.log(username)
 
 
 
   const [lists, setLists] = useState(readData());
-  const [price, setPrice] = useState(90000)
+  const [price, setPrice] = useState()
   const navigate  = useNavigate()
   // useEffect(()=>{
   //   const itemPrice = lists&&lists.reduce((a,i)=>a.price+i.price)
   //    setPrice(itemPrice)
   // },[price])
   // console.log(price)
+  const calcprice = lists.reduce((a,b)=>{
+         a=a+b.price
+         return a
+  },0)
+  useEffect(()=>{setPrice(calcprice)},[])
 
   const [quantity, setQuanity] = useState(1)
   const increase = (id) => {
@@ -85,13 +93,13 @@ function BuyNow() {
       // key: "rzp_test_b57CHszkJAIpNL", 
       amount: order.amount, 
       currency: "INR",
-      name: "Md atiqur rahman",
+      name: username,
       description: "testong razorpay",
       image: "https://img.freepik.com/free-vector/letter-k-logo-concept-your-royal-brand_1017-33266.jpg?size=626&ext=jpg",
       order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
       callback_url: "http://localhost:5000/paymentverify",
       prefill: {
-          name: "Gaurav Kumar",
+          name: "",
           email: "gaurav.kumar@example.com",
           contact: "9000090000"
       },
@@ -107,19 +115,26 @@ function BuyNow() {
 
     razor.open();
 } 
+const[fromatPrice,setFormatePrice]=useState()
+
+useEffect(()=>{
+  lists.map((a)=>{
+   setFormatePrice(a.price)
+  })
+})
 
 
 // const {city,zipcode,state,phone,fullname,email}=address
 
   return (
     <>
-      <div className=" buynow-container container ">
+      <div className=" buynow-container  ">
         <div className="row">
 
           {isaddress ? (
             // <div className="abc">
 
-           <div className="card">
+           <div className="buyCard">
              <h6>{address.fullname}</h6>
              <p>{address.address}</p>
              <span>{address.city} , {address.state}</span>
@@ -205,10 +220,10 @@ function BuyNow() {
                       <>
                         <tr>
                           <th scope="row"><Link to={`/products/${data.id}`}>{data.name}</Link></th>
-                          <td>{data.price}</td>
+                          <td> <FormatPrice  price={data.price}/></td>
                           {/* <td onClick={()=>increase(data.id)}>➕ </td>
       <td onClick={()=>decrease(data.id)}> ➖</td> */}
-                          <td> {data.price * quantity}</td>
+                          <td> <FormatPrice price={data.price}/></td>
                         </tr>
                       </>
                     ))
@@ -217,7 +232,7 @@ function BuyNow() {
                     <th scope="row">Total</th>
                     <td></td>
                     {/* <td> {price}</td> */}
-                    <th scope='row2'>{price}</th>
+                    <th scope='row2'> <FormatPrice price={price}/></th>
                   </tr>
 
                 </tbody>
