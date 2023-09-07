@@ -6,10 +6,10 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../schema/signUp');
 
-Route.get('/',(req,res)=>{
-    console.log(req.body)
-    res.send('hello from route page')
-})  
+// Route.get('/',(req,res)=>{
+//     console.log(req.body)
+//     res.send('hello from route page')
+// })  
 
 
 // ---------Signup Routes---------------------------------

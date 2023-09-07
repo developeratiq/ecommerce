@@ -78,7 +78,7 @@ var instance = new Razorpay({
 const __dirname1 = path.resolve()
  app.use(express.static(path.join(__dirname1,"/Client/build")));
 // console.log(f2)
-app.use(express.static(f2))
+// app.use(express.static(f2))
 if(process.env.NODE_ENV ==="production"){
 
     app.get("*",(req,res)=>{
