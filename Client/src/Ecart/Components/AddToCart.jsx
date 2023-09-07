@@ -27,7 +27,7 @@ function AddToCart() {
     // const items = useSelector((state) => state.cart)
     const [items,setItems] = useState(readData())
     const [data, setData] = useState([])
-    console.log(items)
+    // console.log(items)
     useEffect(() => {
         const name = localStorage.getItem('name')
         if(!name){
@@ -37,6 +37,8 @@ function AddToCart() {
     }, [])
 
     useEffect(()=>{
+       
+
    localStorage.setItem('cart',JSON.stringify(items))
     },[items])
 

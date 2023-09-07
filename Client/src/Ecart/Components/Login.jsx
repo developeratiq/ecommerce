@@ -22,27 +22,28 @@ function Login() {
 
     const handleSubmit =  async (e)=>{
         e.preventDefault();
-        let result = await fetch('http://localhost:7000/login',{
+        let result = await fetch('/login',{
         method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
         body: JSON.stringify({
            email,password
-        }),
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
+        })
     }
     )
     result = await result.json();
-    console.log(result._id)
-    if(result.result==='Invalid credentials'){
-        toast.warn(result.result)
+    console.log(result.loggedIn)
+    if( result.loggedIn ===true){
+        localStorage.setItem('token',result.token)
+        localStorage.setItem('name',result.data.name)
+        navigate('/products')
+        toast.warn('logged in')
     }
     else{
-        localStorage.setItem('name',result.name)
-        localStorage.setItem('userId',result._id)
-        navigate('/products')
+        toast.warn(result.err)
     }
-    // toast(result.result)
+    toast(result.result)
     }
     return (
         <>

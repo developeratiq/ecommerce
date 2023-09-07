@@ -16,6 +16,8 @@ function SIngleProduct() {
 
     }
     useEffect(() => {
+       
+        // localStorage.setItem("name","atiq")
         fetchSingle();
     }, [])
 

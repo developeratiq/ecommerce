@@ -4,6 +4,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineShoppingCart, AiOutlineLogout } from "react-icons/ai";
 import { useSelector } from 'react-redux';
+import {cartSlice} from '../Redux/ProductSlice'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,8 +21,14 @@ const ReadData = () => {
     } else {
         return []
     }
+    return cartData
 }
 function Common() {
+    const numberOf =useSelector(state=>state)
+
+    // console.log(numberOf.cart)
+    const[cartLength,setCartLength]=useState(ReadData())
+    // console.log(cartLength.length)
     const [showPopup, setShowPopup] = useState(true);
     const showPopupFn = ()=>{
         console.log('clocked ')
@@ -44,6 +51,9 @@ function Common() {
         navigate('/products')
         toast.warn('LogOut successfully')
     }
+    // useEffect(()=>{
+    // setCartLength(cartLength)
+    // },[cartLength])
     return (
         <>
             <ToastContainer />
@@ -62,7 +72,7 @@ function Common() {
                     </Nav.Item>
                     <Nav.Item className='nav-items avatar' onClick={showPopupFn}>
 
-                        <Avatar   name="md atiq" size="20" round={true} />
+                        <Avatar   name={name} size="20" round={true} />
                     </Nav.Item>
                     {/* {
                         showPopup&&<Togglebar></Togglebar>

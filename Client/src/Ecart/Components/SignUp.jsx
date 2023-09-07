@@ -27,13 +27,13 @@ function SignUp() {
     const handleSubmit =  async (e) => {
         e.preventDefault();
         
-    let result =  await fetch('http://localhost:7000/signup',{
+    let result =  await fetch('/signup',{
         method: "POST",
         body: JSON.stringify({
            name,email,phone,password
         }),
         headers: {
-            "Content-type": "application/json; charset=UTF-8"
+            "Content-type": "application/json"
         }
     })
     result = await result.json();

@@ -30,7 +30,7 @@ function BuyNow() {
 
 
   const username =localStorage.getItem('name')
-  console.log(username)
+  // console.log(username)
 
 
 
@@ -50,21 +50,21 @@ function BuyNow() {
 
   const [quantity, setQuanity] = useState(1)
   const increase = (id) => {
-    console.log(id)
+    // console.log(id)
     lists.map((x) => {
       if (x.id == id) {
         setQuanity(pre => pre + 1)
-        console.log(quantity)
+        // console.log(quantity)
       }
     })
   }
   const decrease = (id) => {
-    console.log(id)
+    // console.log(id)
   }
 
   const { register, handleSubmit } = useForm();
   const submit = (data) => {
-    console.log(data)
+    // console.log(data)
     localStorage.setItem('Address', JSON.stringify(data))
     // localStorage.setItem('adresss', JSON.stringify(data))
   }
@@ -85,8 +85,8 @@ function BuyNow() {
       amount:price
     })
     // console.log(data)
-    console.log(order.id)
-    console.log(order.amount) 
+    // console.log(order.id)
+    // console.log(order.amount) 
     const key= 'rzp_test_b57CHszkJAIpNL'
     var options = {
       key,
