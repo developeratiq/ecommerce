@@ -3,31 +3,31 @@ import Nav from 'react-bootstrap/Nav';
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineShoppingCart, AiOutlineLogout } from "react-icons/ai";
-import { useSelector } from 'react-redux';
-import {cartSlice} from '../Redux/ProductSlice'
+import { useSelector,useDispatch } from 'react-redux';
+import {cartSlice,getCartTotal} from '../Redux/ProductSlice'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect } from 'react';
 import Avatar from 'react-avatar';
 import Togglebar from './Togglebar';
+import Navigation from '../NAVIGATION/Navigation';
 
 
-const ReadData = () => {
-    const cartData = localStorage.getItem('cart')
-    if (cartData) {
 
-        return JSON.parse(cartData)
-    } else {
-        return []
-    }
-    return cartData
-}
 function Common() {
-    const numberOf =useSelector(state=>state)
+    const dispatch = useDispatch()
+    const numberOf =useSelector(state=>state.cart.cartData.result)
+    const [cartLen ,setCartLen]=useState(numberOf&&numberOf.length)
+    // console.log(numberOf)
+
+    useEffect(()=>{
+  numberOf&&setCartLen(numberOf.length)
+    },[numberOf])
+    // dispatch(getCartTotal())
 
     // console.log(numberOf.cart)
-    const[cartLength,setCartLength]=useState(ReadData())
+    const[cartLength,setCartLength]=useState()
     // console.log(cartLength.length)
     const [showPopup, setShowPopup] = useState(true);
     const showPopupFn = ()=>{
@@ -56,43 +56,7 @@ function Common() {
     // },[cartLength])
     return (
         <>
-            <ToastContainer />
-            <div className="mainbody">
-                <Nav className="justify-content-end">
-                    {/* {name && <h4>{name}</h4>} */}
-
-                    <Nav.Item className='nav-items'>
-                        <Nav.Link className='nav-links' ><Link to='/'>Home</Link></Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item className='nav-items'>
-                        <Nav.Link className='nav-links' ><NavLink to='/products'>Products</NavLink></Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item className='nav-items'>
-                        <Nav.Link className='nav-links' ><NavLink to='/cart'><AiOutlineShoppingCart /></NavLink></Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item className='nav-items avatar' onClick={showPopupFn}>
-
-                        <Avatar   name={name} size="20" round={true} />
-                    </Nav.Item>
-                    {/* {
-                        showPopup&&<Togglebar></Togglebar>
-                    } */}
-                    <Nav.Item className='nav-items'>
-                        {!name ?
-                            <Nav.Link className='nav-links'><NavLink to='/login'>< CgProfile /></NavLink></Nav.Link> :
-
-                            <Nav.Link className='nav-links' onClick={logOut}><AiOutlineLogout /></Nav.Link>
-                        }
-
-                    </Nav.Item>
-
-             {/* <Togglebar show={showPopup} close={closepopUp}/> */}
-
-
-                </Nav>
-
-            </div>
-
+           <Navigation/>
 
         </>
     )

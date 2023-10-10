@@ -42,7 +42,7 @@ const intitalApiState = {
 }
 
 const initialState = {
-  cart: _cartData,
+  cart: {},
   totalQuantity: _totalQuantity,
   totalPrice: _totalAmount
 };
@@ -50,7 +50,7 @@ const initialState = {
 
 export const cartSlice = createSlice({
   name: 'cartData',
-  initialState: intitalApiState,
+  initialState: {},
   // reducers: {
   //   add: (state, action) => {
   //     let find = state.cart.findIndex((item) => item.id === action.payload.id);
@@ -95,51 +95,16 @@ export const cartSlice = createSlice({
   //   state.cart= state.cart.filter(item => item.id !== action.payload)
   // },
   reducers: {
-
+add:(state,action)=>{
+    console.log(action.payload)
+ 
   },
 
-  extraReducers: (builder) => {
-    builder
-    .addCase(getAllData.pending, (state, action) => {
-      state.status = STATUS.LOADING
-    }).addCase(getAllData.fulfilled, (state, action) => {
-      state.allProducts = action.payload
-      state.status = STATUS.IDLE
-    }).addCase(getAllData.rejected, (state, action) => {
-      state.status = STATUS.ERROR
-    })
+},
+extraReducers:(builder)=>{
 
-      .addCase(fetchCart.pending, (state, action) => {
-        state.status = STATUS.LOADING
-      }).addCase(fetchCart.fulfilled, (state, action) => {
-        state.cartData = action.payload
-        state.status = STATUS.IDLE
-      }).addCase(fetchCart.rejected, (state, action) => {
-        state.status = STATUS.ERROR
-      })
-
-      .addCase(addToCart.pending, (state, action) => {
-        state.status = STATUS.LOADING
-      }).addCase(addToCart.fulfilled, (state, action) => {
-        state.cartData = action.payload
-        state.status = STATUS.IDLE
-      }).addCase(addToCart.rejected, (state, action) => {
-        state.status = STATUS.ERROR
-      })
-
-      .addCase(removeFromCart.pending, (state, action) => {
-        state.status = STATUS.LOADING
-      }).addCase(removeFromCart.fulfilled, (state, action) => {
-        state.cartData = action.payload
-        state.status = STATUS.IDLE
-      }).addCase(removeFromCart.rejected, (state, action) => {
-        state.status = STATUS.ERROR
-      })
-
-
-
-  }
-})
+}}
+)
 
 
 export const getAllData = createAsyncThunk('all/data', async () => {
@@ -217,6 +182,6 @@ export const fetchCart = createAsyncThunk('fetch/cart', async () => {
 )
 
 // Action creators are generated for each case reducer function
-export const { add, remove, getCartTotal } = cartSlice.actions
+export const { add} = cartSlice.actions
 
 export default cartSlice.reducer

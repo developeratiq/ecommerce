@@ -37,8 +37,12 @@ function SignUp() {
         }
     })
     result = await result.json();
-    toast(result.result)
+    if(result.result !== 'user registered succesfully'){
+
+        toast.error(result.result)
+    }
     if(result.result=='user registered succesfully'){
+        toast.error('successfull')
         navigate('/login')
     }
   }
@@ -65,6 +69,7 @@ function SignUp() {
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Name</Form.Label>
                                     <Form.Control type="text" placeholder="User Name"
+                                    style={{height:"54px"}}
                                         
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
@@ -74,7 +79,8 @@ function SignUp() {
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
                                     <Form.Control type="email" placeholder="Enter email"
-                                        required
+                                    style={{height:"54px"}}
+                                       
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
@@ -85,7 +91,8 @@ function SignUp() {
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Phone No.</Form.Label>
                                     <Form.Control type="tel" placeholder="1234567890"
-                                        required
+                                    style={{height:"54px"}}
+                                        
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                     />
@@ -95,7 +102,8 @@ function SignUp() {
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" placeholder="Password"
-                                        required
+                                    style={{height:"54px"}}
+                                        
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />

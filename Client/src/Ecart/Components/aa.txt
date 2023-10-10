@@ -1,0 +1,44 @@
+<p><FormatPrice price={items.price}/></p>
+ <div className="container">
+
+    <div className="top">
+
+    <Search items={datas} setSearchData={setSearchData}   />
+     <SelectInput setSelect={setSelect}/>
+
+    </div>
+    <hr />
+     <div className="cards">
+     
+
+        {
+            datas&&datas.filter((f)=>{
+              return searchData.toLowerCase==''? f :f.name.toLowerCase().includes(searchData)
+            })
+             . map((items ,index)=>(
+                <>
+                <div className="card" key={index}>
+          <div className="card_img">
+            <Link  to={`/products/${items.id}`}><img src={items.image} alt={items.name} /></Link>
+             
+              <div className="card_footer">
+              <h4>{items.name}</h4>
+              {/* <p>desc</p> */}
+              
+              {/* <button className='btn btn-primary' onClick={()=>addToCart(items)}> Add to <AiOutlineShoppingCart/></button> */}
+
+              </div>
+        </div>
+       
+       
+        </div>
+                
+                </>
+            ))
+        }
+        
+        
+     </div>
+
+    
+    </div>

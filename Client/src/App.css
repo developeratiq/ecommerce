@@ -7,8 +7,44 @@
  body {
    background-image: linear-gradient(109.6deg, rgba(156, 252, 248, 1) 11.2%,
        rgba(110, 123, 251, 1) 91.1%);
+       width: 99vw;
  }
 
+
+
+
+
+
+ .heading{
+  /* border: 1px solid red; */
+ text-align: center;
+ margin-top: 7vh;
+ max-width: 80vw;
+ position: relative;
+ }
+ .heading::before{
+  content: "";
+  position: absolute;
+  background-color: #474646;
+  width: 20vw;
+  height: .2rem;
+  top: 50%;
+  left: 0;
+  z-index: -2;
+ }.heading::after{
+  content: "";
+  position: absolute;
+ background-color: #474646;
+  width: 20vw;
+  height: .2rem;
+  top: 50%;
+  right: 0;
+  z-index: -1;
+ }
+
+  .heading{
+    left: 5%;
+  }
  /* input {
    background-color: red;
  } */
@@ -393,9 +429,9 @@ margin-top: 4rem;
  }
 /* //buy now page  */
 .buynow-container{
-  width: 90vw;
+  width: 80vw;
   margin-top: 4rem;
-  margin-left: 5vw;
+  /* margin-left: 5vw; */
 }
 .buyCard{
   margin-top: 5rem;
@@ -405,12 +441,131 @@ margin-top: 4rem;
   padding-top: 1rem;
   padding-left: 2rem;
 }
+
+
+
+.part1 , .part3{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.part-2-2 , .part-2-1{
+  /* border: 1px solid red; */
+  display: grid;
+  place-items: center;
+  color: #090909;
+  font-weight: medium;
+}
+.h-icons > h1{
+ /* border: 1px solid red; */
+ width: fit-content;
+ margin-left: 40%;
+ font-size: 50px;
+ border-radius: 50%;
+ padding: .5rem;
+ background-color: #d5cece;
+}
+.h-icons > p{
+color: #090909;
+font-weight: medium;
+}
+
+
+.h-icons2{
+  /* border: 1px solid red; */
+}
+.i1, .i2{
+  display: flex;
+  gap: .7rem;
+  margin-bottom: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
  @media (max-width:450px) {
 
-   .h-custom {
-     height: 100%;
-   }
+  .section4{
+    height: 26vh;
+   
+    /* margin-bottom: 0; */
+    
+  }
+  .section4-inn{
+    /* border: 1px solid red; */
+    width: 100%;
+    margin-left: 0;
+    height: 70%;
+    gap: .1rem;
+    padding-top: 0;
+    margin-top: 1rem;
+    margin-left: .2rem;
+    padding-right: .5rem;
+  }
+.part1 ,.part3{
+  width: 50%;
+  padding: .2rem;
+}
+.h-icons > h1{
+  /* border: 1px solid red; */
+  width: fit-content;
+  margin-left: 25%;
+ 
+ }
+ .h-icons > p{
+  color: #090909;
+  font-weight: medium;
+  margin-left: .3rem;
+  font-size: 80%;
+  }
 
+  .part-2-2 , .part-2-1{
+    /* border: 1px solid red; */
+    padding: 0 .5rem;
+    font-size: 70%;
+    width: 130%;
+    margin-top: 1vh;
+    margin-left: -3vw;
+    
+  }
+  
+
+.heading span{
+/* border: 1px solid red; */
+font-size: 60%;
+font-weight: bold;
+background: transparent;
+/* margin: 5px 20px; */
+padding: 10px;
+border-radius: 5%;
+}
+.heading::after{
+  width: 10%;
+  right: -5%;
+  top: 60%;
+}
+.heading::before{
+  width: 10%;
+  top: 60%;
+  left: -5%;
+}
+.home-image{
+  /* border: 2px solid red; */
+  width: 95vw;
+  
+}
+.home-image img{
+  max-width: 90vw;
+}
+  
    .container {
      width: 90vw;
      font-size: 70%;
@@ -421,6 +576,7 @@ margin-top: 4rem;
    .input {
      width: 80vw;
    }
+   
 
    .cards {
      /* border: .01rem solid grey; */

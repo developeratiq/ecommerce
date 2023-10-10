@@ -19,6 +19,7 @@ function Login() {
 
   const navigate = useNavigate()
     
+  
 
     const handleSubmit =  async (e)=>{
         e.preventDefault();
@@ -33,17 +34,22 @@ function Login() {
     }
     )
     result = await result.json();
-    console.log(result.loggedIn)
-    if( result.loggedIn ===true){
+    
+    if( result.token){
+        console.log('yes token')
         localStorage.setItem('token',result.token)
         localStorage.setItem('name',result.data.name)
+        // localStorage.setItem('name',result.user.name)
+        // localStorage.setItem('email',result.user.email)
+        // localStorage.setItem('role',result.user.role)
+        // localStorage.setItem('id',result.user._id)
         navigate('/products')
         toast.warn('logged in')
     }
     else{
         toast.warn(result.err)
     }
-    toast(result.result)
+    toast.success(result.result)
     }
     return (
         <>
@@ -84,7 +90,9 @@ function Login() {
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" 
+                                    <Form.Control
+                                    style={{height:"54px"}}
+                                    type="email" placeholder="Enter email" 
                                     required
                                      value={email}
                                      onChange={(e)=>setEmail(e.target.value)}
@@ -97,6 +105,7 @@ function Login() {
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" placeholder="Password"
+                                    style={{height:"54px"}}
                                     required
                                     value={password}
                                     onChange={(e)=>setPassword(e.target.value)}

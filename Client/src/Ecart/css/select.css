@@ -25,13 +25,13 @@
     transform: translateY(-50%);
     color: #333;
   }
-  input{
+  /* input{
     appearance: none;
     padding: 10px 30px 10px 15px;
     border: 1px solid grey;
     border-radius: 20px;
     background: transparent;
-  }
+  } */
   @media (max-width:450px) {
 
  
