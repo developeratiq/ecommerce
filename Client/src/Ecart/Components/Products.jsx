@@ -211,7 +211,10 @@ const uniqueCompany= [...new Set(comp)]
   
 const[filtersection,setfiltersection]=useState(true)
 
-
+const clearFilter =()=>{
+  setSelect(null)
+  setRangePrice(null)
+}
 
   return (
     <>
@@ -257,7 +260,7 @@ const[filtersection,setfiltersection]=useState(true)
             </div>
            <button className=' filterbtn shadow-lg bg-[#4859CA] rounded-md px-2 py-1 mb-2 capitalize'
            
-           onClick={()=>setSelect(null)}
+           onClick={clearFilter}
            >clear Filter</button>
            </div>
           </div>
